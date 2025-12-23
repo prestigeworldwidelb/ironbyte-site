@@ -5,6 +5,7 @@
    - Iron Steel: #B7C0C8
    - Byte Blue : #00AEEF
 ========================================================= */
+body { background: red !important; }
 
 :root{
   --bg: #0B0D10;
