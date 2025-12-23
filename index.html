@@ -10,24 +10,109 @@
 </head>
 <body>
 
-  <header>
-    <img 
-      src="assets/images/ironbyte-logo.png" 
-      alt="IronByte logo"
-      style="max-width: 260px;"
-    />
-  </header>
+<header class="topbar">
+  <div class="container topbar-inner">
+    <a class="brand" href="/">
+      <img src="assets/images/ironbyte-icon.png" alt="IronByte icon" />
+      <span style="font-weight:900; letter-spacing:.2px;">IRON<span style="color:#00AEEF;">BYTE</span></span>
+    </a>
 
-  <main>
-    <h1>Built Strong. Coded Smart.</h1>
-    <p>
-      IronByte forges modern digital solutions with precision, performance,
-      and clean engineering.
-    </p>
-  </main>
+    <nav class="nav">
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-  <!-- Main JS -->
-  <script src="assets/js/main.js"></script>
+    <a class="btn primary" href="#contact">Get a Quote</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="kicker"><span class="dot"></span> Forgers of modern web experiences</div>
+
+        <h1 class="h1">
+          <span class="steel">Built Strong.</span><br />
+          <span class="blue">Coded Smart.</span>
+        </h1>
+
+        <p class="sub">
+          IronByte builds fast, secure, premium websites and e-commerce experiences —
+          engineered for performance, SEO, and conversions.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="#contact">Start a Project</a>
+          <a class="btn" href="#services">See Services</a>
+        </div>
+      </div>
+
+      <aside class="card hero-card">
+        <div>
+          <img class="hero-logo" src="assets/images/ironbyte-logo.png" alt="IronByte logo" />
+          <div class="mini">Your digital presence, forged with precision.</div>
+
+          <div class="pills">
+            <span class="pill">Cloudflare</span>
+            <span class="pill">React / Next.js</span>
+            <span class="pill">SEO</span>
+            <span class="pill">UI/UX</span>
+          </div>
+        </div>
+
+        <div class="mini" style="margin-top:16px;">
+          Based in Lebanon • Remote worldwide
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section id="services" class="section">
+    <div class="container">
+      <div class="grid3">
+        <div class="card feature">
+          <div class="icon">⚡</div>
+          <h3>Performance First</h3>
+          <p>Clean code, fast loading, Lighthouse-friendly builds on Cloudflare.</p>
+        </div>
+
+        <div class="card feature">
+          <div class="icon">🛡️</div>
+          <h3>Secure by Design</h3>
+          <p>Modern hosting, sane defaults, and hardening that clients can trust.</p>
+        </div>
+
+        <div class="card feature">
+          <div class="icon">🧠</div>
+          <h3>Conversion UX</h3>
+          <p>Premium layouts that guide users to action without feeling “salesy”.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="card feature" style="padding:22px;">
+        <h3 style="margin:0 0 8px;">Let’s build something solid.</h3>
+        <p style="margin:0 0 14px; color:rgba(255,255,255,.72);">
+          Send a quick message and we’ll reply with next steps.
+        </p>
+        <a class="btn primary" href="mailto:info@ironbyte.digital">Email IronByte</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    © <span id="y"></span> IronByte. Built Strong. Coded Smart.
+  </div>
+</footer>
+
 </body>
 </html>
 
