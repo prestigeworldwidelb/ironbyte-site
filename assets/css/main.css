@@ -76,6 +76,58 @@ a{ color:inherit; text-decoration:none; }
 }
 .nav a{ padding:8px 10px; border-radius:10px; }
 .nav a:hover{ background: rgba(255,255,255,.06); color: var(--white); }
+.topbar-actions{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+/* Hamburger button */
+.menu-btn{
+  width:44px;
+  height:44px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.06);
+  display:none;            /* shown on mobile via media query */
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+  cursor:pointer;
+  box-shadow: 0 10px 28px rgba(0,0,0,.25);
+}
+.menu-btn span{
+  display:block;
+  width:18px;
+  height:2px;
+  background: rgba(255,255,255,.85);
+  border-radius:99px;
+}
+.menu-btn:hover{ background: rgba(255,255,255,.10); }
+
+/* Mobile dropdown */
+.mobile-menu{
+  display:none;
+  position:absolute;
+  right: clamp(12px, 4vw, 40px);
+  top: 64px;
+  width: min(340px, 92vw);
+  padding: 14px;
+  border-radius: var(--r);
+}
+.mobile-menu.open{ display:block; }
+
+.mobile-link{
+  display:block;
+  padding: 12px 12px;
+  border-radius: 12px;
+  color: rgba(255,255,255,.86);
+  font-weight:800;
+}
+.mobile-link:hover{
+  background: rgba(255,255,255,.06);
+  color: var(--white);
+}
 
 .btn{
   display:inline-flex;
@@ -247,6 +299,10 @@ a{ color:inherit; text-decoration:none; }
   .hero-grid{ grid-template-columns: 1fr; }
   .hero{ padding-top: 46px; }
   .grid3{ grid-template-columns: 1fr; }
-  .nav{ display:none; } /* simple mobile: hide menu for now */
+
+  .nav{ display:none; }
+  .menu-btn{ display:inline-flex; }
+  .desktop-cta{ display:none; }
 }
+
 
