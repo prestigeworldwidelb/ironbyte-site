@@ -17,14 +17,29 @@
       <span style="font-weight:900; letter-spacing:.2px;">IRON<span style="color:#00AEEF;">BYTE</span></span>
     </a>
 
-    <nav class="nav">
-      <a href="#services">Services</a>
-      <a href="#work">Work</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
+   <nav class="nav" aria-label="Primary">
+  <a href="#services">Services</a>
+  <a href="#work">Work</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+</nav>
 
-    <a class="btn primary" href="#contact">Get a Quote</a>
+<div class="topbar-actions">
+  <a class="btn primary desktop-cta" href="#contact">Get a Quote</a>
+
+  <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+    <span></span><span></span><span></span>
+  </button>
+</div>
+
+<div class="mobile-menu card" id="mobileMenu" aria-hidden="true">
+  <a href="#services" class="mobile-link">Services</a>
+  <a href="#work" class="mobile-link">Work</a>
+  <a href="#about" class="mobile-link">About</a>
+  <a href="#contact" class="mobile-link">Contact</a>
+  <a class="btn primary" href="#contact" style="width:100%; margin-top:10px;">Get a Quote</a>
+</div>
+
   </div>
 </header>
 
