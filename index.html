@@ -16,7 +16,7 @@
       <span class="brand-text">IRON<span class="brand-blue">BYTE</span></span>
     </a>
 
-    <nav class="nav" aria-label="Primary">
+    <nav class="nav" id="primaryNav" aria-label="Primary">
       <a href="#services">Services</a>
       <a href="#work">Work</a>
       <a href="#about">About</a>
@@ -37,15 +37,18 @@
         <span></span><span></span><span></span>
       </button>
     </div>
+  </div>
 
-    <!-- Mobile dropdown -->
-    <div class="mobile-menu card" id="mobileMenu" aria-hidden="true">
-      <a href="#services" class="mobile-link">Services</a>
-      <a href="#work" class="mobile-link">Work</a>
-      <a href="#about" class="mobile-link">About</a>
-      <a href="#contact" class="mobile-link">Contact</a>
-      <a class="btn primary" href="#contact" style="width:100%; margin-top:10px;">Get a Quote</a>
-    </div>
+  <!-- ✅ Backdrop (tap outside to close) -->
+  <div class="mobile-backdrop" id="mobileBackdrop" hidden></div>
+
+  <!-- ✅ Mobile dropdown (moved outside topbar-inner so it can overlay cleanly) -->
+  <div class="mobile-menu card" id="mobileMenu" aria-hidden="true" role="dialog" aria-modal="true">
+    <a href="#services" class="mobile-link">Services</a>
+    <a href="#work" class="mobile-link">Work</a>
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+    <a class="btn primary" href="#contact" style="width:100%; margin-top:10px;">Get a Quote</a>
   </div>
 </header>
 
@@ -115,7 +118,6 @@
     </div>
   </section>
 
-  <!-- ✅ Added Work section (so #work works) -->
   <section id="work" class="section">
     <div class="container">
       <div class="card feature" style="padding:22px;">
@@ -127,7 +129,6 @@
     </div>
   </section>
 
-  <!-- ✅ Added About section (so #about works) -->
   <section id="about" class="section">
     <div class="container">
       <div class="card feature" style="padding:22px;">
@@ -152,7 +153,6 @@
     </div>
   </section>
 
-  <!-- Platforms section (kept inside main for cleaner structure) -->
   <section class="ib-platforms">
     <div class="ib-container">
       <h3 class="ib-platforms-title">Platforms We Build With</h3>
@@ -183,10 +183,4 @@
 
 <footer class="footer">
   <div class="container">
-    © <span id="y"></span> IronByte. Built Strong. Coded Smart.
-  </div>
-</footer>
-
-<script src="assets/js/main.js"></script>
-</body>
-</html>
+    © <span id="y"></span>
