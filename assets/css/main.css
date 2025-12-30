@@ -41,13 +41,14 @@ a{ color:inherit; text-decoration:none; }
   position:sticky;
   top:0;
   z-index:50;
+  min-height: 70px;
   backdrop-filter: blur(10px);
   background: rgba(11,13,16,.55);
   border-bottom: 1px solid rgba(255,255,255,.08);
 }
 
 .topbar-inner{
-  position:relative; /* IMPORTANT: anchors the absolute mobile menu */
+  position: relative;
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -128,6 +129,10 @@ a{ color:inherit; text-decoration:none; }
   gap:5px;
   cursor:pointer;
   box-shadow: 0 10px 28px rgba(0,0,0,.25);
+
+  /* ensure always clickable above overlays */
+  position: relative;
+  z-index: 1001;
 }
 .menu-btn span{
   display:block;
@@ -144,7 +149,7 @@ a{ color:inherit; text-decoration:none; }
 .menu-btn.is-open span:nth-child(2){ opacity:0; }
 .menu-btn.is-open span:nth-child(3){ transform: translateY(-7px) rotate(-45deg); }
 
-/* Mobile dropdown */
+/* Card base */
 .card{
   border-radius: var(--r);
   background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.05));
@@ -152,16 +157,32 @@ a{ color:inherit; text-decoration:none; }
   box-shadow: var(--shadow);
 }
 
+/* ================================
+   Mobile Menu (Overlay + Backdrop)
+================================ */
+
+/* Backdrop overlay (hidden by default) */
+.mobile-backdrop{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.55);
+  backdrop-filter: blur(2px);
+  z-index: 999; /* under menu, above page */
+}
+
+/* Mobile menu panel (hidden by default) */
 .mobile-menu{
-  display:none;
-  position:absolute;
-  right: 0;             /* align to right edge of container */
-  top: calc(100% + 10px);
-  width: min(340px, 92vw);
+  position: fixed;
+  top: 70px;                 /* sits under sticky topbar */
+  right: 14px;
+  width: min(360px, calc(100vw - 28px));
   padding: 14px;
   border-radius: var(--r);
-  z-index: 99;
+  z-index: 1000;
+  display: none;
 }
+
+/* When opened (JS will toggle this class) */
 .mobile-menu.open{ display:block; }
 
 .mobile-link{
@@ -328,12 +349,10 @@ a{ color:inherit; text-decoration:none; }
   .nav{ display:none; }
   .menu-btn{ display:inline-flex; }
   .desktop-cta{ display:none; }
-
-  .mobile-menu{
-    right: 0;
-    left: auto;
-  }
 }
+
+/* ---------------- Platforms ---------------- */
+
 .ib-platforms {
   padding: 60px 20px;
   background: #0f0f0f;
