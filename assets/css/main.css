@@ -454,3 +454,13 @@ a{ color:inherit; text-decoration:none; }
 /* Ensure menu is above everything */
 .mobile-menu{ z-index: 1000; }
 .mobile-backdrop{ z-index: 999; }
+.mobile-menu{
+  transform: translateY(-6px);
+  opacity: 0;
+  transition: transform .18s ease, opacity .18s ease;
+}
+.mobile-menu.open{
+  transform: translateY(0);
+  opacity: 1;
+}
+
